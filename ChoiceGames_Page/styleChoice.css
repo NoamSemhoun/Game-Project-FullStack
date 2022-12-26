@@ -1,0 +1,40 @@
+header{
+    display: flex;
+    justify-content: center;
+    color: rgb(221, 99, 188);
+    font-size: large;
+}
+
+body {
+    background-image: url(https://ug-17df4.kxcdn.com/wp-content/uploads/2020/06/les-4-meilleurs-sites-fond-ecran-gamer-950x500.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.choices {
+    display: block;
+}
+
+img[src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ081Yl9068FoqORpzgBLUom1h53gOX_GyIw&usqp=CAU"]{
+    width: 350px;
+    height: 250px;
+    position: relative;
+    left: 60px;
+} 
+
+img[src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ081Yl9068FoqORpzgBLUom1h53gOX_GyIw&usqp=CAU"]:hover{
+    perspective: 1px;
+}
+
+img[src="https://www.gifsanimes.com/img-jeu-video-image-animee-0006-166330.htm"] {
+    width: 350px;
+    height: 250px;
+    position: relative;
+    left: 110px;
+}
+
+img[src="https://www.gifsanimes.com/img-jeu-video-image-animee-0006-166330.htm"]:hover{
+    perspective: 1px;
+}
+
