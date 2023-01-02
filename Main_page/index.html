@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="C:\Users\yoelo\source\vscode\Game-Project-FullStack\Main_page\script.js"></script>
     <title>FS_Project2</title>
 </head>
 <header>
@@ -13,7 +14,8 @@
 </header>
 <body>
     <div class="form">
-        <form action="C:\Users\yoelo\source\vscode\Game-Project-FullStack\ChoiceGames_Page\choiceGames.html" target="_blank" method="POST">
+        <form action="C:\Users\yoelo\source\vscode\Game-Project-FullStack\ChoiceGames_Page\choiceGames.html" 
+        target="_blank" method="POST" onsubmit="storage(event)" id="entryForm">
             <label for="Username">Enter your username:</label> <br>
             <input type="text" name="Username" id="Username" placeholder="Username"
             minlength="4" maxlength="10" required> <br>
@@ -23,5 +25,6 @@
             <button id="submit">Submit</button>
         </form>
     </div>
+
 </body>
 </html>

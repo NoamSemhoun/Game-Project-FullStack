@@ -1,0 +1,23 @@
+body {
+    text-align: center;
+}
+
+#title {
+    color: khaki;
+}
+
+#board {
+    width: 360px;
+    height: 360px;
+    background-color: aquamarine;
+    margin: 0 auto;
+    border: 10px solid beige;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board img {
+    width: 118px;
+    height: 118px;
+    border: 1px solid beige;
+}

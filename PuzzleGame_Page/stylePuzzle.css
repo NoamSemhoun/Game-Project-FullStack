@@ -1,0 +1,37 @@
+header{
+    color:dodgerblue;
+    display: flex;
+    justify-content: center;
+}
+
+body{
+    background-color: rgb(234, 236, 112);
+}
+
+.choice {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 100px; 
+}
+
+#easy {
+    width: 45px;
+    height: 20px;
+    background-color: transparent;
+    margin-left: 1ch;
+}
+
+#medium {
+    width: 45px;
+    height: 20px;
+    background-color: transparent;
+    margin-left: 1ch;
+}
+
+#hard {
+    width: 45px;
+    height: 20px;
+    background-color: transparent;
+    margin-left: 1ch;
+}
