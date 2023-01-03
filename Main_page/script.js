@@ -6,4 +6,5 @@ function storage(event) {
     localStorage.setItem('Password', pwd);
 
     document.getElementById("entryForm").reset(); 
+    // gg
 }
