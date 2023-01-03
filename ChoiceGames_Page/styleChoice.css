@@ -6,7 +6,7 @@ header{
 }
 
 body {
-    background-image: url("Images/BackgroundPlay.jpg");
+    background-image: url(..\Images\BackgroundPlay.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
