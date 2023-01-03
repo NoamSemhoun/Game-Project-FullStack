@@ -9,7 +9,7 @@ body {
 #board {
     width: 360px;
     height: 360px;
-    background-color: aquamarine;
+    background-color: transparent;
     margin: 0 auto;
     border: 10px solid beige;
     display: flex;
