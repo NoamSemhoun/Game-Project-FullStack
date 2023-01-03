@@ -10,7 +10,7 @@ window.onload = function() {
         for (let j=0; j < columns; j++) {
             let cell = document.createElement("img");
             cell.id = i.toString() + "-" + j.toString(); //Display les coordonates of the cell
-            cell.src = realImg.shift() + ".jpg";
+            cell.src = "../Pictures/" + realImg.shift() + ".jpg" ;
 
             cell.addEventListener("dragstart", dragStart); // Click an image to drag
             cell.addEventListener("dragover", dragOver); // Moving image around while clicked
