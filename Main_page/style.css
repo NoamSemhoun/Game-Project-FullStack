@@ -4,14 +4,34 @@ header{
     justify-content: center;
 }
 
+h5{
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-left: -80%;
+    font-size: 15px;
+
+}
+
+h3{
+    margin-left: 20%;
+}
+
+
 .form{
     display: flex;
     justify-content: center;
+    background-color: rgba(46, 213, 255, 0.514); 
+
 }
 
 #submit{
     display: flex;
     margin-left: 55px;
+}
+
+#Register{
+    display: inline-block;
+    margin-left: 120px;
 }
 
 body {

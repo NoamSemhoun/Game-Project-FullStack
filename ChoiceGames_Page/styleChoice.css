@@ -6,7 +6,7 @@ header{
 }
 
 body {
-    background-image: url(https://ug-17df4.kxcdn.com/wp-content/uploads/2020/06/les-4-meilleurs-sites-fond-ecran-gamer-950x500.jpg);
+    background-image: url("Images/BackgroundPlay.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
