@@ -5,7 +5,7 @@ h1 {
   }
 
   h2 {
-    font-size: 50px;
+    font-size: 51px;
     text-align: center;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold';
     color: #104f5f;
@@ -27,7 +27,7 @@ body{
 .division{
   display: inline-flex;
   margin-top: 20px;
-  margin-left: 20%;
+  margin-left: 18%;
   
 }
 
