@@ -9,8 +9,8 @@ window.onload = function() {
     for (let i=0; i < rows; i++) {
         for (let j=0; j < columns; j++) {
             let cell = document.createElement("img");
-            cell.id = i.toString() + "-" + j.toString(); //Display les coordonates of the cell
-            cell.src = "../Pictures/" + realImg.shift() + ".jpg" ;
+            cell.id = i.toString() + "-" + j.toString(); //Display the coordinates of the cell
+            cell.src = "../Pictures/" + realImg.shift() + ".jpg" ; // Put picture by picture from the array in the order and put them in the board
 
             cell.addEventListener("dragstart", dragStart); // Click an image to drag
             cell.addEventListener("dragover", dragOver); // Moving image around while clicked
@@ -29,11 +29,11 @@ function dragStart() {
 }
 
 function dragOver(e) {
-    e.prenventDefault();
+    e.preventDefault();
 }
 
 function dragEnter(e) {
-    e.prenventDefault();
+    e.preventDefault();
 }
 
 function dragLeave() {
@@ -46,17 +46,17 @@ function dragDrop() {
 
 function dragEnd() {
 
-    if(!freeCell.src.includes("3.jpg")) {
+    if(!freeCell.src.includes("Pictures/3.jpg")) {
         return;
     }
 
-    let currCoord = currCell.split("-");
+    let currCoord = currCell.id.split("-");
     let i = parseInt(currCoord[0]);
     let j = parseInt(currCoord[1]);
 
-    let freeCoord = freeCell.split("-");
-    let k = parseInt(currCoord[0]);
-    let l = parseInt(currCoord[1]);
+    let freeCoord = freeCell.id.split("-");
+    let k = parseInt(freeCoord[0]);
+    let l = parseInt(freeCoord[1]);
 
     let left = i == k && l == j-1;
     let right = i == k && l == j+1;
@@ -65,7 +65,7 @@ function dragEnd() {
 
     let near = left || right || up || down;
 
-    if(near) {
+    if (near) {
         let currImg = currCell.src;
         let freeImg = freeCell.src;
 
