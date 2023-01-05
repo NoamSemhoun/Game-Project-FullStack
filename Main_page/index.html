@@ -22,7 +22,7 @@
 <body>
     <div class="form">
         <form action="..\ChoiceGames_Page\choiceGames.html"
-        target="_blank" method="POST" onsubmit="storage(event)" id="entryForm">
+        target="_blank" method="POST" id="entryForm" onsubmit="storeValues()">
        
             <h3>Log in :</h3>
            
@@ -34,11 +34,11 @@
             <label for="Password">Enter your password:</label> <br>
             <input type="password" name="Password" id="Password" placeholder="Password"
             pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
-            <button id="submit" onclick="check(event)">Submit</button>
+            <button id="submit" onclick="check(i)">Submit</button>
             <br>
         </form>
         <br>
-        <a href="../Main_page/register.html"><button id="SignUp">Sign up</button></a>
+        <a href="../Main_page/register.html"><button id="SignUp" >Sign up</button></a>
     </div>
 
 </body>
