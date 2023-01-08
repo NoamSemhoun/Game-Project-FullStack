@@ -8,8 +8,7 @@
     <title>Register</title>
 </head>
 <body>
-    <form action="../ChoiceGames_Page/choiceGames.html" target="_blank" 
-    method="POST" id="registerForm" name="myform" onsubmit="storage()">
+    <form action="#" method="POST" id="registerForm" name="myform">
     <h3>Sign up:</h3>
            
 
@@ -17,18 +16,20 @@
     <input type="text" name="Username" id="Username" placeholder="Username"
     minlength="4" maxlength="10" required> <br><br>
 
-    <label for="Password">Enter your password:</label> <br>
-    <input type="password" name="Password" id="Password" placeholder="Password"
-    pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
-
+    
     <label for="Email">Enter your email:</label> <br>
     <input type="email" name="Email" id="Email" placeholder="user@gmail.com" 
     pattern="[a-zA-Z0-9]+@gmail.com" required> <br><br>
 
-    <label for="Age">Enter your age</label> <br>
-    <input type="number" name="Age" id="Age" required> <br><br>
+    <label for="Password">Enter your password:</label> <br>
+    <input type="password" name="Password" id="Password" placeholder="Password"
+    pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
+    
+    <label for="PasswordConfirmation">Confirm your password:</label> <br>
+    <input type="password" name="PasswordConfirmation" id="PasswordConfirmation" placeholder="Password"
+    pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
 
-    <a href="../ChoiceGames_Page/choiceGames.html"><button id="submit">Submit</button></a>
+    <button id="submit" onclick="create()">Submit</button>
     </form>
 
 </body>

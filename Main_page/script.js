@@ -1,53 +1,49 @@
-function storage() {
+function create() {
     var userName = document.getElementById("Username").value;
     var pwd = document.getElementById("Password").value;
-    var email = document.getElementById("Email").value;
-    var age = document.getElementById("Age").value;
+    var confirmation = document.getElementById("PasswordConfirmation").value;
 
-    localStorage.setItem('Username', userName);
-    localStorage.setItem('Password', pwd);
-    localStorage.setItem('Email', email);
-    localStorage.setItem('Age', age);
+    if(confirmation != pwd){
+        alert("Sign up failed! Try again!")
+        pwd.reset();
+        confirmation.reset();
+        return;
+    } else {
+        localStorage.setItem('Username', userName);
+        localStorage.setItem('Password', pwd);
 
-    document.getElementById("myForm").reset(); // clear the form when changing page
-    
+        document.getElementById("registerForm").reset(); // clear the form when changing page
+        alert("Sign up success!");
+        
+        document.location.href="..\\ChoiceGames_Page\\choiceGames.html";
+        return;
+    }
 }
+var turn = 0;
 
 function check() {
-    let a = 0; // counter for number of tries to authenticate
-    while(!check1(i) && a < 6) {
-        check1(i);
-        a+=i;
-    }
-}
+    var username = document.getElementById("Username").value;
+    var password = document.getElementById("Password").value;
+    
 
-function check1(i) {
-    var tries = 0;
-    var userName = document.getElementById("Username").value;
-    var pwd = document.getElementById("Password").value;
+    var storedUsername = localStorage.getItem("Username").value;
+    var storedPassword = localStorage.getItem("Password").value;
 
-    if(userName === localStorage.key("Username") && pwd === localStorage.key("Password")){
-        tries += 1;
-        alert("Authentication success!");
-        return true;
+    if(username === storedUsername && password === storedPassword) {
+        alert("Login success!")
+        username.reset();
+        password.reset();
+        document.location.href="..\\ChoiceGames_Page\\choiceGames.html";
+        return;
     } else {
-        tries += 1;
-        alert("Failed to authenticate!");
-        return false;
+        alert("Failed to login");
+        turn += 1;
     }
-} 
 
-var today = new Date();
-var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
-
-function setCookie(name, value) {
-    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
-}
-
-function storeValues(form)  {
-    setCookie("Username", form.field1.value);
-    setCookie("Password", form.field2.value);
-
-    document.getElementById("entryForm").reset(); // clear the form when changing page
-    return true;
+    if(turn == 5) {
+        localStorage.removeItem("Username");
+        localStorage.removeItem("Password");
+        alert("Too much fails! You need to register!")
+        return;
+    } 
 }
