@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
     <script src="../Main_page/script.js"></script>
     <title>Register</title>
 </head>
 <body>
-    <form action="#" method="POST" id="registerForm" name="myform">
+    <form  id="registerForm">
     <h3>Sign up:</h3>
            
 
     <label for="Username">Enter your username:</label> <br>
     <input type="text" name="Username" id="Username" placeholder="Username"
     minlength="4" maxlength="10" required> <br><br>
-
     
     <label for="Email">Enter your email:</label> <br>
     <input type="email" name="Email" id="Email" placeholder="user@gmail.com" 
@@ -29,7 +29,7 @@
     <input type="password" name="PasswordConfirmation" id="PasswordConfirmation" placeholder="Password"
     pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
 
-    <button id="submit" onclick="create()">Submit</button>
+    <input type="submit" value="Submit" onsubmit="a(e)">
     </form>
 
 </body>
