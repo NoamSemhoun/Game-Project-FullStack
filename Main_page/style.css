@@ -12,24 +12,19 @@ h5{
 
 }
 
-h3{
-    margin-left: 20%;
-}
-
-
 .form{
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
     background-color: rgba(46, 213, 255, 0.514); 
 
 }
 
 #submit{
     display: flex;
-    margin-left: 55px;
+    margin-left: 600px;
 }
 
-#Register{
+#SignUp{
     display: inline-block;
     margin-left: 120px;
 }

@@ -1,0 +1,16 @@
+body {
+    background-image: url(https://ug-17df4.kxcdn.com/wp-content/uploads/2020/06/les-4-meilleurs-sites-fond-ecran-gamer-950x500.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+#registerForm{
+    display: block;
+    text-align: center;
+}

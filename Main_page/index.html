@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="Main_page/script.js"></script>
+    <script src="../Main_page/script.js"></script>
     <title>FS_Project2</title>
 </head>
 
@@ -21,10 +21,9 @@
 
 <body>
     <div class="form">
-        <form action="..\ChoiceGames_Page\choiceGames.html"
-        target="_blank" method="POST" onsubmit="storage(event)" id="entryForm">
+        <form action="#" method="POST" id="entryForm">
        
-          <h3>Log in :</h3>
+            <h3>Log in :</h3>
            
 
             <label for="Username">Enter your username:</label> <br>
@@ -34,12 +33,11 @@
             <label for="Password">Enter your password:</label> <br>
             <input type="password" name="Password" id="Password" placeholder="Password"
             pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
-            <button id="submit">Submit</button>
-            <br>
-            <button id="Register">Sign up</button>
-
+            <button id="submit" onclick="check()">Submit</button>
             <br>
         </form>
+        <br>
+        <a href="../Main_page/register.html"><button id="SignUp" >Sign up</button></a>
     </div>
 
 </body>

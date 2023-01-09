@@ -21,3 +21,19 @@ body {
     height: 118px;
     border: 1px solid beige;
 }
+
+#board1 {
+    width: 400px;
+    height: 400px;
+    background-color: transparent;
+    margin: 0 auto;
+    border: 10px solid beige;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#board1 img {
+    width: 198px;
+    height: 198px;
+    border: 1px solid beige;
+}
