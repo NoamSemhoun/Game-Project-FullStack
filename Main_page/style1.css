@@ -5,6 +5,20 @@ body {
     background-size: cover;
 }
 
+h5{
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    margin-left: -80%;
+    font-size: 15px;
+
+}
+
+header{
+    color: gold;
+    display: flex;
+    justify-content: center;
+}
+
 h3{
     display: flex;
     justify-content: center;
@@ -13,4 +27,9 @@ h3{
 #registerForm{
     display: block;
     text-align: center;
+
+
+        background-color: rgba(46, 213, 255, 0.514); 
+    
+    
 }
