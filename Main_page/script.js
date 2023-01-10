@@ -1,40 +1,66 @@
 var turn = 0;
 
 function check(e) {
+
   var username = document.getElementById("Username").value;
   var password = document.getElementById("Password").value;
 
-  var storedUsername = localStorage.getItem("Username");
-  var storedPassword = localStorage.getItem("Password");
+  if(username.value == "" || password == "")
+  {
+    e.preventDefault();
+    alert("You need to fill the fields!");
+    return false;
+  }
+
+  for(j = 0; j < localStorage.length; j++) {
+    if(username == localStorage.getItem(("Username"+j)) && password == localStorage.getItem(("Password"+j))) {
+      var storedUsername = localStorage.getItem("Username"+j);
+      var storedPassword = localStorage.getItem("Password"+j);
+    }
+  }
+  //var storedUsername = localStorage.getItem("Username");
+  //var storedPassword = localStorage.getItem("Password");
 
   if (username == storedUsername && password == storedPassword) {
 
-      alert("Login success!")
+    alert("Login success!")
 
-      document.getElementById("Username").value = "";
-      document.getElementById("Password").value = "";
+    document.getElementById("Username").value = "";
+    document.getElementById("Password").value = "";
 
-      checkCookie();
-      e.preventDefault();
-      window.open("../ChoiceGames_Page/choiceGames.html");
-      return;
+    checkCookie();
+    e.preventDefault();
+    window.open("../ChoiceGames_Page/choiceGames.html");
+    return;
 
   } else {
-    while(username != storedUsername || password != storedPassword) {
-
-      alert("Failed to login");
-      e.preventDefault();
-      turn += 1;
-
-      if (turn == 5) {
-
-        localStorage.removeItem("Username");
-        localStorage.removeItem("Password");
-
-        alert("Too much fails! You need to register!")
-        return;
+    turn ++;
+    if (turn == 3) {
+      for(j = 0; j < localStorage.length; j++) {
+        if(username == localStorage.getItem(("Username"+j))) {
+          localStorage.removeItem("Username"+j);
+          localStorage.removeItem("Password"+j);
+        } else if (password == localStorage.getItem(("Password"+j))) {
+          localStorage.removeItem("Username"+j);
+          localStorage.removeItem("Password"+j);
+        }
       }
+      
+      alert("Too much fails! You need to register again!");
+      document.getElementById("Username").value = "";
+      document.getElementById("Password").value = "";
+      e.preventDefault();
+      return;
     }
+    
+    document.getElementById("Username").value = "";
+    document.getElementById("Password").value = "";
+    document.getElementById("Username").type = "Username";
+    document.getElementById("Password").type = "Password";
+    alert("Failed to login");
+    //document.getElementById("entryForm").preventDefault();
+      
+    e.preventDefault();
   }
 }
 
@@ -80,6 +106,13 @@ function a(e){
   var userName = document.getElementById("Username").value;
   var pwd = document.getElementById("Password").value;
   var confirmation = document.getElementById("PasswordConfirmation").value;
+
+  for(j = 0; j < localStorage.length; j++) {
+    if(userName == localStorage.getItem(("Username"+j)) && pwd == localStorage.getItem(("Password"+j))) {
+      var storedUsername = localStorage.getItem("Username"+j);
+      var storedPassword = localStorage.getItem("Password"+j);
+    }
+  }
         
   if(confirmation != pwd) {
 
@@ -89,7 +122,7 @@ function a(e){
       e.preventDefault();
       return false;
 
-  } else if (userName == localStorage.getItem("Username", userName) && pwd == localStorage.getItem("Password", pwd)) {
+  } else if (userName == storedUsername && pwd == storedPassword) {
 
     alert("You are already registered! You need log in!");
     e.preventDefault();
@@ -117,4 +150,5 @@ function a(e){
     window.open("../ChoiceGames_Page/choiceGames.html");
     return;
   }
+  
 }
