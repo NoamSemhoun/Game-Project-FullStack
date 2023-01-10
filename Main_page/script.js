@@ -1,32 +1,44 @@
 var turn = 0;
 
-function check() {
-    var username = document.getElementById("Username").value;
-    var password = document.getElementById("Password").value;
+function check(e) {
+  var username = document.getElementById("Username").value;
+  var password = document.getElementById("Password").value;
 
+  var storedUsername = localStorage.getItem("Username");
+  var storedPassword = localStorage.getItem("Password");
 
-    var storedUsername = localStorage.getItem("Username").value;
-    var storedPassword = localStorage.getItem("Password").value;
+  if (username == storedUsername && password == storedPassword) {
 
-    if (username === storedUsername && password === storedPassword) {
-        alert("Login success!")
-        username.reset();
-        password.reset();
-        document.location.href = "..\\ChoiceGames_Page\\choiceGames.html";
-        return;
-    } else {
-        alert("Failed to login");
-        turn += 1;
-    }
+      alert("Login success!")
 
-    if (turn == 5) {
+      document.getElementById("Username").value = "";
+      document.getElementById("Password").value = "";
+
+      checkCookie();
+      e.preventDefault();
+      window.open("../ChoiceGames_Page/choiceGames.html");
+      return;
+
+  } else {
+    while(username != storedUsername || password != storedPassword) {
+
+      alert("Failed to login");
+      e.preventDefault();
+      turn += 1;
+
+      if (turn == 5) {
+
         localStorage.removeItem("Username");
         localStorage.removeItem("Password");
+
         alert("Too much fails! You need to register!")
         return;
+      }
     }
+  }
 }
 
+//#region cookie
 function setCookie(cname, cvalue, exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -60,31 +72,49 @@ function setCookie(cname, cvalue, exdays) {
       }
     }
   }
+//#endregion
 
 //Event for the sign up form
 function a(e){
-    var userName = document.getElementById("Username");
-    var pwd = document.getElementById("Password");
-    var confirmation = document.getElementById("PasswordConfirmation");
 
-    if(confirmation.value == pwd.value) {
-        localStorage.setItem('Username', userName.value);
-        localStorage.setItem('Password', pwd.value);
-
-        userName.value.reset();
-        pwd.value.reset();
-        confirmation.value.reset();
-        //document.getElementById("registerForm").reset(); 
-        alert("Sign up success!");
-
-        document.location.href = "../ChoiceGames_Page/choiceGames.html";
-        return;
+  var userName = document.getElementById("Username").value;
+  var pwd = document.getElementById("Password").value;
+  var confirmation = document.getElementById("PasswordConfirmation").value;
         
-    } else {
-        alert("Sign up failed! Try again!")
-        pwd.reset();
-        confirmation.reset();
-        e.preventDefault();
-        return false;
-    } 
+  if(confirmation != pwd) {
+
+      alert("Sign up failed! Try again!")
+      document.getElementById("Password").value = "";
+      document.getElementById("PasswordConfirmation").value = "";
+      e.preventDefault();
+      return false;
+
+  } else if (userName == localStorage.getItem("Username", userName) && pwd == localStorage.getItem("Password", pwd)) {
+
+    alert("You are already registered! You need log in!");
+    e.preventDefault();
+    window.close("../Main_page/register.html");
+    window.open("../Main_page/index.html");
+    return false;
+
+  } else {
+    var i = 0;
+
+    while(("Username"+i) in localStorage && ("Password"+i) in localStorage) {
+      i++;
+    }
+    localStorage.setItem(("Username"+i), userName);
+    localStorage.setItem(("Password"+i), pwd);
+        
+    document.getElementById("Username").value = "";
+    document.getElementById("Email").value = "";
+    document.getElementById("Password").value = "";
+    document.getElementById("PasswordConfirmation").value = "";
+
+    alert("Sign up success!");
+    checkCookie();
+    this.window = "../Main_page/index.html";
+    window.open("../ChoiceGames_Page/choiceGames.html");
+    return;
+  }
 }

@@ -21,7 +21,7 @@
 
 <body>
     <div class="form">
-        <form action="#" method="POST" id="entryForm">
+        <form target="_blank" id="entryForm">
        
             <h3>Log in :</h3>
            
@@ -33,7 +33,7 @@
             <label for="Password">Enter your password:</label> <br>
             <input type="password" name="Password" id="Password" placeholder="Password"
             pattern="[a-zA-Z0-9]+" minlength="8" required> <br><br>
-            <button id="submit" onclick="check()">Submit</button>
+            <input type="submit" value="Submit" onclick="check(event)">
             <br>
         </form>
         <br>
