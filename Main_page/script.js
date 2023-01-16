@@ -18,8 +18,6 @@ function check(e) {
       var storedPassword = localStorage.getItem("Password"+j);
     }
   }
-  //var storedUsername = localStorage.getItem("Username");
-  //var storedPassword = localStorage.getItem("Password");
 
   if (username == storedUsername && password == storedPassword) {
 
@@ -31,6 +29,7 @@ function check(e) {
     checkCookie();
     e.preventDefault();
     window.open("../ChoiceGames_Page/choiceGames.html");
+    this.window.close("../Main_page/index.html");
     return;
 
   } else {
@@ -101,7 +100,7 @@ function setCookie(cname, cvalue, exdays) {
 //#endregion
 
 //Event for the sign up form
-function a(e){
+function register(e){
 
   var userName = document.getElementById("Username").value;
   var pwd = document.getElementById("Password").value;
@@ -146,8 +145,9 @@ function a(e){
 
     alert("Sign up success!");
     checkCookie();
-    this.window = "../Main_page/index.html";
+    //this.window = "../Main_page/index.html";
     window.open("../ChoiceGames_Page/choiceGames.html");
+    this.window.close("../Main_page/register.html");
     return;
   }
   
