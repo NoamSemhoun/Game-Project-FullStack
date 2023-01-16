@@ -2,7 +2,7 @@ header{
     display: flex;
     justify-content: center;
     color: rgb(221, 99, 188);
-    font-size: large;
+    font-size: large; 
 }
 
 h5{
