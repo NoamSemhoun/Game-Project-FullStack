@@ -144,7 +144,6 @@ function register(e){
     document.getElementById("PasswordConfirmation").value = "";
 
     alert("Sign up success!");
-    ch
     window.open("../ChoiceGames_Page/choiceGames.html");
     
     return true;

@@ -5,6 +5,7 @@ function displayName() {
 
 }
 
+// We have a problem with cookies
 function getCookie(cname) {
     let name = cname + "=";
     let ca = document.cookie.split(';');
