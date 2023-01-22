@@ -5,7 +5,7 @@ function check(e) {
   var username = document.getElementById("Username").value;
   var password = document.getElementById("Password").value;
 
-  if(username.value == "" || password == "")
+  if(username == "" || password == "")
   {
     e.preventDefault();
     alert("You need to fill the fields!");
@@ -22,11 +22,11 @@ function check(e) {
   if (username == storedUsername && password == storedPassword) {
 
     alert("Login success!")
+    checkCookie();
 
     document.getElementById("Username").value = "";
     document.getElementById("Password").value = "";
 
-    checkCookie();
     e.preventDefault();
     window.open("../ChoiceGames_Page/choiceGames.html");
     this.window.close("../Main_page/index.html");
@@ -57,7 +57,6 @@ function check(e) {
     document.getElementById("Username").type = "Username";
     document.getElementById("Password").type = "Password";
     alert("Failed to login");
-    //document.getElementById("entryForm").preventDefault();
       
     e.preventDefault();
   }
@@ -87,6 +86,7 @@ function setCookie(cname, cvalue, exdays) {
   }
   
   function checkCookie() {
+
     let user = getCookie("username");
     if (user != "") {
       alert("Welcome again " + user);
@@ -144,11 +144,10 @@ function register(e){
     document.getElementById("PasswordConfirmation").value = "";
 
     alert("Sign up success!");
-    checkCookie();
-    //this.window = "../Main_page/index.html";
+    ch
     window.open("../ChoiceGames_Page/choiceGames.html");
-    this.window.close("../Main_page/register.html");
-    return;
+    
+    return true;
   }
   
 }

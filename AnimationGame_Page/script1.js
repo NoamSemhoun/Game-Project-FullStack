@@ -75,5 +75,4 @@ function dragEnd() {
         turns += 1;
         document.getElementById("turns").innerText = turns;
     }
-    
 }

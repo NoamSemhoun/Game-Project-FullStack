@@ -47,7 +47,7 @@ function dragDrop() {
 function dragEnd() {
 
     if(!freeCell.src.includes("Pictures/3.jpg")) {
-        return;
+        localStorage.setItem("Score") = turns;
     }
 
     let currCoord = currCell.id.split("-");

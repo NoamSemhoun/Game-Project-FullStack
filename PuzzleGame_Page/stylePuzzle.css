@@ -9,8 +9,9 @@ body{
 }
 
 .choice {
-    display: flex;
+    display: block;
     position: relative;
+    margin-left: 46%;
     justify-content: center;
     top: 100px; 
 }
