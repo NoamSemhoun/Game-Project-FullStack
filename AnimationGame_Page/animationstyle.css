@@ -1,6 +1,13 @@
 body {
     text-align: center;
 }
+h5{
+    color: rgb(255, 0, 0);
+    display: inline-block;
+    margin-left: 5%; 
+    font-size: 15px;
+
+}
 
 #title {
     color: khaki;
