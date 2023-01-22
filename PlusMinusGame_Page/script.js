@@ -23,10 +23,13 @@ const genererNombreAleatoire = () => {
     container.insertBefore(divTexte, container.firstChild)
   }
   
+  var test = 1;
+
   const proposerNombre = () => {
     // Récupérer le champs avec le nombre
     const input = document.getElementById('input-nombre')
-  
+    document.getElementById("test").innerText = test++;
+
     // Récupérer la valeur du champs
     const valeur = input.value
   
